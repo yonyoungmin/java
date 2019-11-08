@@ -4,11 +4,11 @@
 <head>
 <link rel = "stylesheet"
     href = "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bottstrap.min.css">
+    <nav class = "navbar navbar-expand navbar-dark bg-dark">
 <title>Welcome</title>
 </head>
 <body>
-    <nav class = "navbar navbar-expand navbar-dark bg-dark">
-       <div class = "container">
+     <div class = "container">
            <div class = "navbar-header">
                <a class = "navbar-brand" href=" ./welcome.jsp">Home</a>
            </div>

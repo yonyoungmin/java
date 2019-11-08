@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=utf-8"%>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import-"dto.Product"%>
+<%@ page import="dto.Product"%>
+<%@ page import="dao.ProductRepository"%>
 <jsp:useBean id="productDAO" class="dao.ProductRepository" scope="session" />
 <html>
 <body>
@@ -15,6 +16,7 @@
         </div>
      </div>
      <%
+         ProductRepository dao = ProductRepository.getInstance();
          ArrayList<Product> listOfProducts = productDAO.getAllProducts();
      %>
      <div class="container">
@@ -23,7 +25,10 @@
                   for (int i = 0; i < listOfProducts.size(); i++){
                 	  Product product = listOfProducts.get(i);
              %>
-             <div class="col-md-4">
+             <div class="col-md-5">
+             <img src="c:/upload/<%=product.getFilename()%>" style="width: 100%" />
+             </div>
+             <div class="col-md-6">
                   <h3><%=product.getPname()%></h3>
                   <p><%=product.getDescription()%>
                   <p><%=product.getUnitPrice()%>원
